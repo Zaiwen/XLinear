@@ -1,0 +1,62 @@
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_336', model='MLPAer_only_temp', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=336, fc_dropout=0.05, head_dropout=0.7, patch_len=16, stride=8, padding_patch='end', revin=1, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=30, batch_size=128, patience=5, learning_rate=0.0002, des='Exp', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, c_ff=14, t_ff=512, c_dropout=0.0, t_dropout=0.0, embed_dropout=0.0, head_type='prediction', usenorm=1, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=False)
+Use GPU: cuda:0
+>>>>>>>start training : ETTh1_96_336_MLPAer_only_temp_ETTh1_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8209
+val 2545
+test 2545
+Epoch: 1 cost time: 1.2668232917785645
+Epoch: 1, Steps: 64 | Train Loss: 0.6780865 Vali Loss: 1.6693816 Test Loss: 0.7042367
+Validation loss decreased (inf --> 1.669382).  Saving model ...
+Updating learning rate to 0.0002
+Epoch: 2 cost time: 1.1270923614501953
+Epoch: 2, Steps: 64 | Train Loss: 0.5826499 Vali Loss: 1.3504783 Test Loss: 0.5107560
+Validation loss decreased (1.669382 --> 1.350478).  Saving model ...
+Updating learning rate to 0.0002
+Epoch: 3 cost time: 1.086012840270996
+Epoch: 3, Steps: 64 | Train Loss: 0.5249447 Vali Loss: 1.3093458 Test Loss: 0.4838365
+Validation loss decreased (1.350478 --> 1.309346).  Saving model ...
+Updating learning rate to 0.0002
+Epoch: 4 cost time: 1.4853065013885498
+Epoch: 4, Steps: 64 | Train Loss: 0.5105762 Vali Loss: 1.2948449 Test Loss: 0.4769424
+Validation loss decreased (1.309346 --> 1.294845).  Saving model ...
+Updating learning rate to 0.00018
+Epoch: 5 cost time: 1.0941269397735596
+Epoch: 5, Steps: 64 | Train Loss: 0.5032521 Vali Loss: 1.2906529 Test Loss: 0.4722734
+Validation loss decreased (1.294845 --> 1.290653).  Saving model ...
+Updating learning rate to 0.000162
+Epoch: 6 cost time: 1.110133409500122
+Epoch: 6, Steps: 64 | Train Loss: 0.4987218 Vali Loss: 1.2839363 Test Loss: 0.4694882
+Validation loss decreased (1.290653 --> 1.283936).  Saving model ...
+Updating learning rate to 0.00014580000000000002
+Epoch: 7 cost time: 1.1248681545257568
+Epoch: 7, Steps: 64 | Train Loss: 0.4952663 Vali Loss: 1.2854217 Test Loss: 0.4674119
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00013122
+Epoch: 8 cost time: 1.0703415870666504
+Epoch: 8, Steps: 64 | Train Loss: 0.4925945 Vali Loss: 1.2740253 Test Loss: 0.4659506
+Validation loss decreased (1.283936 --> 1.274025).  Saving model ...
+Updating learning rate to 0.00011809800000000002
+Epoch: 9 cost time: 1.0618257522583008
+Epoch: 9, Steps: 64 | Train Loss: 0.4905100 Vali Loss: 1.2792959 Test Loss: 0.4645616
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00010628820000000001
+Epoch: 10 cost time: 1.1884632110595703
+Epoch: 10, Steps: 64 | Train Loss: 0.4885043 Vali Loss: 1.2815109 Test Loss: 0.4625096
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 9.565938000000003e-05
+Epoch: 11 cost time: 1.1232707500457764
+Epoch: 11, Steps: 64 | Train Loss: 0.4869457 Vali Loss: 1.2831385 Test Loss: 0.4610647
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 8.609344200000003e-05
+Epoch: 12 cost time: 1.1235904693603516
+Epoch: 12, Steps: 64 | Train Loss: 0.4856166 Vali Loss: 1.2802762 Test Loss: 0.4609317
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 7.748409780000002e-05
+Epoch: 13 cost time: 1.032588005065918
+Epoch: 13, Steps: 64 | Train Loss: 0.4842317 Vali Loss: 1.2798799 Test Loss: 0.4603426
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_336_MLPAer_only_temp_ETTh1_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2545
+mse:0.46595045924186707, mae:0.44224128127098083, rse:0.6525238752365112

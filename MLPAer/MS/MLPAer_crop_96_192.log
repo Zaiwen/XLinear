@@ -1,0 +1,51 @@
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='crop_96_192', model='MLPAer', data='custom', root_path='./dataset/crop', data_path='crop.csv', features='MS', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=192, fc_dropout=0.05, head_dropout=0.9, patch_len=16, stride=8, padding_patch='end', revin=1, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, embed_type=0, enc_in=8, dec_in=7, c_out=7, d_model=256, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=128, patience=3, learning_rate=0.0001, des='Exp', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, c_ff=8, t_ff=128, c_dropout=0.0, t_dropout=0.0, embed_dropout=0.0, head_type='prediction', usenorm=1, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=False)
+Use GPU: cuda:0
+>>>>>>>start training : crop_96_192_MLPAer_custom_ftMS_sl96_ll48_pl192_dm256_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5952
+val 702
+test 1591
+Epoch: 1 cost time: 0.9991433620452881
+Epoch: 1, Steps: 46 | Train Loss: 1.0026554 Vali Loss: 0.6878077 Test Loss: 0.3867268
+Validation loss decreased (inf --> 0.687808).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.736781120300293
+Epoch: 2, Steps: 46 | Train Loss: 0.9702791 Vali Loss: 0.6631558 Test Loss: 0.3781805
+Validation loss decreased (0.687808 --> 0.663156).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 3 cost time: 0.8373939990997314
+Epoch: 3, Steps: 46 | Train Loss: 0.9244981 Vali Loss: 0.6334113 Test Loss: 0.3726139
+Validation loss decreased (0.663156 --> 0.633411).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 4 cost time: 0.8061127662658691
+Epoch: 4, Steps: 46 | Train Loss: 0.8946189 Vali Loss: 0.6148193 Test Loss: 0.3640987
+Validation loss decreased (0.633411 --> 0.614819).  Saving model ...
+Updating learning rate to 9e-05
+Epoch: 5 cost time: 0.7708334922790527
+Epoch: 5, Steps: 46 | Train Loss: 0.8653786 Vali Loss: 0.5956470 Test Loss: 0.3585798
+Validation loss decreased (0.614819 --> 0.595647).  Saving model ...
+Updating learning rate to 8.1e-05
+Epoch: 6 cost time: 0.7707202434539795
+Epoch: 6, Steps: 46 | Train Loss: 0.8433579 Vali Loss: 0.5820349 Test Loss: 0.3568884
+Validation loss decreased (0.595647 --> 0.582035).  Saving model ...
+Updating learning rate to 7.290000000000001e-05
+Epoch: 7 cost time: 0.8492159843444824
+Epoch: 7, Steps: 46 | Train Loss: 0.8299905 Vali Loss: 0.5737199 Test Loss: 0.3567570
+Validation loss decreased (0.582035 --> 0.573720).  Saving model ...
+Updating learning rate to 6.561e-05
+Epoch: 8 cost time: 0.7796862125396729
+Epoch: 8, Steps: 46 | Train Loss: 0.8205590 Vali Loss: 0.5648340 Test Loss: 0.3572344
+Validation loss decreased (0.573720 --> 0.564834).  Saving model ...
+Updating learning rate to 5.904900000000001e-05
+Epoch: 9 cost time: 0.8326828479766846
+Epoch: 9, Steps: 46 | Train Loss: 0.8155097 Vali Loss: 0.5623180 Test Loss: 0.3575199
+Validation loss decreased (0.564834 --> 0.562318).  Saving model ...
+Updating learning rate to 5.3144100000000005e-05
+Epoch: 10 cost time: 0.7626700401306152
+Epoch: 10, Steps: 46 | Train Loss: 0.8062896 Vali Loss: 0.5608381 Test Loss: 0.3578205
+Validation loss decreased (0.562318 --> 0.560838).  Saving model ...
+Updating learning rate to 4.782969000000001e-05
+>>>>>>>testing : crop_96_192_MLPAer_custom_ftMS_sl96_ll48_pl192_dm256_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1591
+find shape (1536, 192, 1) (1536, 192, 1)
+mse:0.3578204810619354, mae:0.4629007577896118, nse:-0.12433207035064697, mape:1.2517178058624268

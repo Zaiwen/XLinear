@@ -1,0 +1,42 @@
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_192', model='MLPAer_univariate', data='ETTh2', root_path='./dataset/', data_path='ETTh2.csv', features='MS', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=192, fc_dropout=0.05, head_dropout=0.7, patch_len=16, stride=8, padding_patch='end', revin=1, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=1024, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=30, batch_size=128, patience=3, learning_rate=0.0001, des='Exp', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, c_ff=7, t_ff=512, c_dropout=0.1, t_dropout=0.4, embed_dropout=0.1, head_type='prediction', usenorm=1, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=False)
+Use GPU: cuda:0
+>>>>>>>start training : ETTh1_96_192_MLPAer_univariate_ETTh2_ftMS_sl96_ll48_pl192_dm1024_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8353
+val 2689
+test 2689
+Epoch: 1 cost time: 5.11023736000061
+Epoch: 1, Steps: 65 | Train Loss: 0.3279754 Vali Loss: 0.2737097 Test Loss: 0.2467414
+Validation loss decreased (inf --> 0.273710).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 4.9894750118255615
+Epoch: 2, Steps: 65 | Train Loss: 0.2791109 Vali Loss: 0.2231292 Test Loss: 0.1862362
+Validation loss decreased (0.273710 --> 0.223129).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 3 cost time: 5.107295274734497
+Epoch: 3, Steps: 65 | Train Loss: 0.2501707 Vali Loss: 0.2189421 Test Loss: 0.1822840
+Validation loss decreased (0.223129 --> 0.218942).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 4 cost time: 4.992337942123413
+Epoch: 4, Steps: 65 | Train Loss: 0.2418795 Vali Loss: 0.2175977 Test Loss: 0.1806227
+Validation loss decreased (0.218942 --> 0.217598).  Saving model ...
+Updating learning rate to 9e-05
+Epoch: 5 cost time: 4.899603843688965
+Epoch: 5, Steps: 65 | Train Loss: 0.2371204 Vali Loss: 0.2172811 Test Loss: 0.1800753
+Validation loss decreased (0.217598 --> 0.217281).  Saving model ...
+Updating learning rate to 8.1e-05
+Epoch: 6 cost time: 5.01572060585022
+Epoch: 6, Steps: 65 | Train Loss: 0.2335547 Vali Loss: 0.2205498 Test Loss: 0.1810683
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 7.290000000000001e-05
+Epoch: 7 cost time: 3.430172920227051
+Epoch: 7, Steps: 65 | Train Loss: 0.2312559 Vali Loss: 0.2183411 Test Loss: 0.1806874
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 6.561e-05
+Epoch: 8 cost time: 3.3697144985198975
+Epoch: 8, Steps: 65 | Train Loss: 0.2288630 Vali Loss: 0.2197411 Test Loss: 0.1808972
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : ETTh1_96_192_MLPAer_univariate_ETTh2_ftMS_sl96_ll48_pl192_dm1024_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2689
+mse:0.18007536232471466, mae:0.33147957921028137, rse:0.7012595534324646

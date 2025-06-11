@@ -1,0 +1,50 @@
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_720', model='MLPAer_univariate', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='MS', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=720, fc_dropout=0.05, head_dropout=0.7, patch_len=16, stride=8, padding_patch='end', revin=1, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=128, patience=3, learning_rate=0.0002, des='Exp', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, c_ff=14, t_ff=512, c_dropout=0.0, t_dropout=0.0, embed_dropout=0.0, head_type='prediction', usenorm=1, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=False)
+Use GPU: cuda:0
+>>>>>>>start training : ETTh1_96_720_MLPAer_univariate_ETTh1_ftMS_sl96_ll48_pl720_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 7825
+val 2161
+test 2161
+Epoch: 1 cost time: 3.6061060428619385
+Epoch: 1, Steps: 61 | Train Loss: 0.3261065 Vali Loss: 0.2085110 Test Loss: 0.1074217
+Validation loss decreased (inf --> 0.208511).  Saving model ...
+Updating learning rate to 0.0002
+Epoch: 2 cost time: 3.3125393390655518
+Epoch: 2, Steps: 61 | Train Loss: 0.3091796 Vali Loss: 0.1900607 Test Loss: 0.0980535
+Validation loss decreased (0.208511 --> 0.190061).  Saving model ...
+Updating learning rate to 0.0002
+Epoch: 3 cost time: 3.3063368797302246
+Epoch: 3, Steps: 61 | Train Loss: 0.2943176 Vali Loss: 0.1765693 Test Loss: 0.0920805
+Validation loss decreased (0.190061 --> 0.176569).  Saving model ...
+Updating learning rate to 0.0002
+Epoch: 4 cost time: 3.325258255004883
+Epoch: 4, Steps: 61 | Train Loss: 0.2821627 Vali Loss: 0.1614765 Test Loss: 0.0832805
+Validation loss decreased (0.176569 --> 0.161476).  Saving model ...
+Updating learning rate to 0.00018
+Epoch: 5 cost time: 3.2597954273223877
+Epoch: 5, Steps: 61 | Train Loss: 0.2775149 Vali Loss: 0.1648388 Test Loss: 0.0856834
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.000162
+Epoch: 6 cost time: 3.326118230819702
+Epoch: 6, Steps: 61 | Train Loss: 0.2744060 Vali Loss: 0.1611402 Test Loss: 0.0831719
+Validation loss decreased (0.161476 --> 0.161140).  Saving model ...
+Updating learning rate to 0.00014580000000000002
+Epoch: 7 cost time: 3.343935966491699
+Epoch: 7, Steps: 61 | Train Loss: 0.2726277 Vali Loss: 0.1632850 Test Loss: 0.0847278
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.00013122
+Epoch: 8 cost time: 3.329413652420044
+Epoch: 8, Steps: 61 | Train Loss: 0.2713104 Vali Loss: 0.1597570 Test Loss: 0.0831881
+Validation loss decreased (0.161140 --> 0.159757).  Saving model ...
+Updating learning rate to 0.00011809800000000002
+Epoch: 9 cost time: 3.326359510421753
+Epoch: 9, Steps: 61 | Train Loss: 0.2699924 Vali Loss: 0.1610714 Test Loss: 0.0842202
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.00010628820000000001
+Epoch: 10 cost time: 3.3017525672912598
+Epoch: 10, Steps: 61 | Train Loss: 0.2691788 Vali Loss: 0.1594107 Test Loss: 0.0833159
+Validation loss decreased (0.159757 --> 0.159411).  Saving model ...
+Updating learning rate to 9.565938000000003e-05
+>>>>>>>testing : ETTh1_96_720_MLPAer_univariate_ETTh1_ftMS_sl96_ll48_pl720_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2161
+mse:0.0833158791065216, mae:0.2270531803369522, rse:0.9524862170219421
