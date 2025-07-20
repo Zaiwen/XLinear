@@ -2,4 +2,5 @@
 Time Series Transformer for Crop Modeling
 
 
-version
+1 Multi-variate forcasting
+2 Univariate forcasting
