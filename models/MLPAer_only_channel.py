@@ -27,25 +27,26 @@ class Model(nn.Module):
         )
         
 
-    def forward(self, x):
+    def forward(self, x_enc):
         # [batch_size, seq_len, channel]
         if self.norm:
-            means = torch.mean(x, dim=1).unsqueeze(1).detach()
-            x = x - means
-            stdev = torch.sqrt(
-                torch.var(x, dim=1, keepdim=True)) + 1e-5
-            x = x / stdev
+            # Normalization
+            means = x_enc.mean(1, keepdim=True).detach()
+            x_enc = x_enc - means
+            stdev = torch.sqrt(torch.var(x_enc, dim=1, keepdim=True, unbiased=False) + 1e-5)
+            x_enc /= stdev
         
-        x = x.permute(0, 2, 1)                                  # [b, c, s]
+        x_enc = x_enc.permute(0, 2, 1)                                  # [b, c, s]
         
-        en = self.backbone(x)                                   # [b, c, d]
+        en = self.backbone(x_enc)                                   # [b, c, d]
         
-        out = self.head(en).permute(0, 2, 1)                    # [b, t, c]
+        dec_out = self.head(en).permute(0, 2, 1)                    # [b, t, c]
         
         if self.norm:
-            out = out * stdev + means
+            dec_out = dec_out * (stdev[:, 0, :].unsqueeze(1).repeat(1, self.pred_len, 1))
+            dec_out = dec_out + (means[:, 0, :].unsqueeze(1).repeat(1, self.pred_len, 1))
         
-        return out
+        return dec_out
 
 
 class MLPAerBackbone(nn.Module):

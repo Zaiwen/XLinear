@@ -91,7 +91,6 @@ if __name__ == '__main__':
     parser.add_argument('--c_dropout', default=0., type=float)
     parser.add_argument('--t_dropout', default=0., type=float)
     parser.add_argument('--embed_dropout', type=float, default=0.1)
-    parser.add_argument('--head_type', default='prediction', type=str)
     parser.add_argument('--usenorm', default=1, type=int)
 
     # GPU
@@ -117,8 +116,6 @@ if __name__ == '__main__':
         device_ids = args.devices.split(',')
         args.device_ids = [int(id_) for id_ in device_ids]
         args.gpu = args.device_ids[0]
-
-    # args.gpu = 1
     
     print('Args in experiment:')
     print(args)

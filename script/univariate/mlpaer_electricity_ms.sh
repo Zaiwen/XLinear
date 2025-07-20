@@ -1,4 +1,3 @@
-# 创建日志目录
 if [ ! -d "./MLPAer" ]; then
     mkdir ./MLPAer
 fi
@@ -30,7 +29,7 @@ python -u run_longExp.py \
     --d_model 2048\
     --t_ff 512\
     --c_ff 24\
-    --c_dropout 0.2\
+    --c_dropout 0\
     --t_dropout 0.2\
     --head_dropout 0.6\
     --embed_dropout 0.2\
@@ -82,10 +81,10 @@ python -u run_longExp.py \
     --d_model 2048\
     --t_ff 512\
     --c_ff 24\
-    --c_dropout 0.1\
-    --t_dropout 0.3\
+    --c_dropout 0\
+    --t_dropout 0.2\
     --head_dropout 0.6\
-    --embed_dropout 0.3\
+    --embed_dropout 0.2\
     --patience 2\
     --des 'Exp' \
     --train_epochs 30 \
@@ -108,10 +107,10 @@ python -u run_longExp.py \
     --d_model 2048\
     --t_ff 512\
     --c_ff 24\
-    --t_dropout 0.2\
-    --c_dropout 0.2\
-    --head_dropout 0.6\
-    --embed_dropout 0.2\
+    --t_dropout 0\
+    --c_dropout 0\
+    --head_dropout 0.4\
+    --embed_dropout 0\
     --des 'Exp' \
     --train_epochs 10 \
     --batch_size 32 \

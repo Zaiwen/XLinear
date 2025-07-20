@@ -1,6 +1,3 @@
-
-
-# 创建日志目录
 if [ ! -d "./MLPAer" ]; then
     mkdir ./MLPAer
 fi
@@ -30,18 +27,18 @@ python -u run_longExp.py \
     --pred_len 96 \
     --enc_in 7 \
     --d_model 512\
-    --t_ff 512\
-    --c_ff 14 \
+    --t_ff 128\
+    --c_ff 7 \
     --t_dropout 0\
     --c_dropout 0\
-    --head_dropout 0.7\
+    --head_dropout 0.2\
     --embed_dropout 0\
-    --patience 3\
+    --patience 5\
     --des 'Exp' \
     --train_epochs 30 \
-    --batch_size 128 \
+    --batch_size 32 \
     --itr 1 \
-    --learning_rate 0.0005 >MLPAer/MS/MLPAer_etth1_96_96.log
+    --learning_rate 0.0001 >MLPAer/MS/MLPAer_etth1_96_96.log
 
 
 python -u run_longExp.py \
@@ -81,19 +78,20 @@ python -u run_longExp.py \
     --seq_len 96 \
     --pred_len 336 \
     --enc_in 7 \
-    --d_model 512\
-    --t_ff 512\
-    --c_ff 14 \
+    --d_model 256\
+    --t_ff 64\
+    --c_ff 7 \
     --c_dropout 0\
     --t_dropout 0\
-    --head_dropout 0.7\
-    --embed_dropout 0.1\
+    --head_dropout 0\
+    --embed_dropout 0\
     --patience 3\
     --des 'Exp' \
     --train_epochs 30 \
-    --batch_size 128 \
+    --batch_size 32 \
     --itr 1 \
-    --learning_rate 0.0002 >MLPAer/MS/MLPAer_etth1_96_336.log
+    --learning_rate 0.0001 >MLPAer/MS/MLPAer_etth1_96_336.log
+    
 
 python -u run_longExp.py \
     --random_seed $random_seed \

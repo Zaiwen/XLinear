@@ -29,17 +29,17 @@ python -u run_longExp.py \
     --seq_len 96 \
     --pred_len 96 \
     --enc_in 7 \
-    --d_model 512\
-    --t_ff 512\
+    --d_model 256\
+    --t_ff 64\
     --c_ff 7 \
-    --t_dropout 0.3\
-    --c_dropout 0.1\
-    --head_dropout 0.7\
-    --embed_dropout 0.1\
+    --t_dropout 0\
+    --c_dropout 0\
+    --head_dropout 0.4\
+    --embed_dropout 0\
     --patience 3\
     --des 'Exp' \
     --train_epochs 30 \
-    --batch_size 128 \
+    --batch_size 32 \
     --itr 1 \
     --learning_rate 0.0001 >MLPAer/MS/MLPAer_etth2_96_96.log
 
@@ -55,13 +55,13 @@ python -u run_longExp.py \
     --seq_len 96 \
     --pred_len 192 \
     --enc_in 7 \
-    --d_model 1024\
-    --t_ff 512\
+    --d_model 512\
+    --t_ff 128\
     --c_ff 7\
-    --c_dropout 0.1\
-    --t_dropout 0.4\
-    --head_dropout 0.7\
-    --embed_dropout 0.1\
+    --c_dropout 0\
+    --t_dropout 0\
+    --head_dropout 0.5\
+    --embed_dropout 0\
     --patience 3\
     --des 'Exp' \
     --train_epochs 30 \

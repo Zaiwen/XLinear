@@ -28,13 +28,14 @@ python -u run_longExp.py \
     --seq_len 96 \
     --pred_len 96 \
     --enc_in 7 \
-    --d_model 512\
+    --d_model 128\
     --t_ff 512\
-    --c_ff 14 \
+    --c_ff 7 \
     --t_dropout 0\
     --c_dropout 0\
-    --head_dropout 0.7\
+    --head_dropout 0.2\
     --embed_dropout 0\
+    --patience 5\
     --des 'Exp' \
     --train_epochs 30 \
     --batch_size 128 \
@@ -54,18 +55,19 @@ python -u run_longExp.py \
     --seq_len 96 \
     --pred_len 192 \
     --enc_in 7 \
-    --d_model 512\
-    --t_ff 512\
-    --c_ff 14\
+    --d_model 128\
+    --t_ff 1024\
+    --c_ff 7\
     --c_dropout 0\
-    --t_dropout 0.2\
-    --head_dropout 0.6\
+    --t_dropout 0\
+    --head_dropout 0.3\
     --embed_dropout 0\
+    --patience 5\
     --des 'Exp' \
     --train_epochs 30 \
     --batch_size 128 \
     --itr 1 \
-    --learning_rate 0.0002 >MLPAer/only_channel/MLPAer_etth1_96_192.log
+    --learning_rate 0.0005 >MLPAer/only_channel/MLPAer_etth1_96_192.log
 
 python -u run_longExp.py \
     --random_seed $random_seed \
@@ -79,19 +81,19 @@ python -u run_longExp.py \
     --seq_len 96 \
     --pred_len 336 \
     --enc_in 7 \
-    --d_model 512\
-    --t_ff 512\
-    --c_ff 14 \
+    --d_model 128\
+    --t_ff 1024\
+    --c_ff 7 \
     --c_dropout 0\
     --t_dropout 0\
-    --head_dropout 0.7\
+    --head_dropout 0.4\
     --embed_dropout 0\
     --patience 5\
     --des 'Exp' \
     --train_epochs 30 \
     --batch_size 128 \
     --itr 1 \
-    --learning_rate 0.0002 >MLPAer/only_channel/MLPAer_etth1_96_336.log
+    --learning_rate 0.0005 >MLPAer/only_channel/MLPAer_etth1_96_336.log
 
 python -u run_longExp.py \
     --random_seed $random_seed \
@@ -104,16 +106,16 @@ python -u run_longExp.py \
     --features M \
     --seq_len 96 \
     --pred_len 720 \
-    --d_model 512\
-    --c_ff 14\
-    --t_ff 512\
+    --d_model 64\
+    --c_ff 7\
+    --t_ff 128\
     --c_dropout 0\
-    --t_dropout 0\
-    --head_dropout 0.7\
+    --t_dropout 0.1\
+    --head_dropout 0.2\
     --embed_dropout 0\
-    --patience 7\
+    --patience 10\
     --des 'Exp' \
     --train_epochs 30 \
     --batch_size 128 \
     --itr 1 \
-    --learning_rate 0.0002 >MLPAer/only_channel/MLPAer_etth1_96_720.log
+    --learning_rate 0.0005 >MLPAer/only_channel/MLPAer_etth1_96_720.log

@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 
-# MLPAer : for univariate model
+# MLPAer : for univariate
 
 class Model(nn.Module):
     def __init__(self, configs):
@@ -31,25 +31,26 @@ class Model(nn.Module):
         )
         
 
-    def forward(self, x):
+    def forward(self, x_enc):
         # [batch_size, seq_len, channel]
         if self.norm:
-            means = torch.mean(x, dim=1).unsqueeze(1).detach()
-            x = x - means
-            stdev = torch.sqrt(
-                torch.var(x, dim=1, keepdim=True)) + 1e-5
-            x = x / stdev
+            # Normalization from Non-stationary Transformer
+            means = x_enc.mean(1, keepdim=True).detach()
+            x_enc = x_enc - means
+            stdev = torch.sqrt(torch.var(x_enc, dim=1, keepdim=True, unbiased=False) + 1e-5)
+            x_enc /= stdev
         
-        x = x.permute(0, 2, 1)                                  # [b, c, s]
+        x_enc = x_enc.permute(0, 2, 1)                                  # [b, c, s]
         
-        en = self.backbone(x)                                   # [b, 1, 2d]
+        en = self.backbone(x_enc)                                   # [b, 1, 2d]
         
-        out = self.head(en).permute(0, 2, 1)                    # [b, t, 1]
+        dec_out = self.head(en).permute(0, 2, 1)                    # [b, t, 1]
         
         if self.norm:
-            out = out * stdev[:, :, -1:] + means[:, :, -1:]
+            dec_out = dec_out * (stdev[:, 0, -1:].unsqueeze(1).repeat(1, self.pred_len, 1))
+            dec_out = dec_out + (means[:, 0, -1:].unsqueeze(1).repeat(1, self.pred_len, 1))
         
-        return out
+        return dec_out
 
 class MLPAerBackBone(nn.Module):
     def __init__(self, seq_len, d_model, channel, t_ff, c_ff, t_dropout, c_dropout, embed_dropout):

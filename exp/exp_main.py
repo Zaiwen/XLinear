@@ -1,7 +1,6 @@
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
-from models import Informer, Autoformer, Transformer, DLinear,\
-Linear, NLinear, PatchTST, MLPAer, MLPAer_univariate,\
+from models import MLPAer, MLPAer_univariate,\
 MLPAer_only_temp, MLPAer_only_channel
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
 from utils.metrics import metric
@@ -27,13 +26,6 @@ class Exp_Main(Exp_Basic):
 
     def _build_model(self):
         model_dict = {
-            'Autoformer': Autoformer,
-            'Transformer': Transformer,
-            'Informer': Informer,
-            'DLinear': DLinear,
-            'NLinear': NLinear,
-            'Linear': Linear,
-            'PatchTST': PatchTST,
             'MLPAer': MLPAer,
             'MLPAer_univariate':MLPAer_univariate,
             'MLPAer_only_temp':MLPAer_only_temp,
@@ -304,8 +296,8 @@ class Exp_Main(Exp_Basic):
             os.makedirs(folder_path)
             
         print("find shape", preds.shape, trues.shape)
-        mae, mse, rmse, mape, mspe, rse, corr, nse = metric(preds, trues)
-        print('mse:{}, mae:{}, nse:{}, mape:{}'.format(mse, mae, nse, mape))
+        mae, mse, rmse, mape, mspe, rse, corr, nse, kge, r2 = metric(preds, trues)
+        print('mse:{}, mae:{}, nse:{}, kge:{}, mape:{}'.format(mse, mae, nse, kge, mape))
         f = open("result.txt", 'a')
         f.write(setting + "  \n")
         f.write('mse:{}, mae:{}, rse:{}'.format(mse, mae, rse))

@@ -1,4 +1,3 @@
-# 创建日志目录
 if [ ! -d "./MLPAer" ]; then
     mkdir ./MLPAer
 fi

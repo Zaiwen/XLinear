@@ -27,12 +27,12 @@ random_seed=2025
 #     --seq_len 96 \
 #     --pred_len 96 \
 #     --enc_in 8 \
-#     --d_model 256\
+#     --d_model 32\
 #     --c_ff 8\
-#     --t_ff 128\
+#     --t_ff 8\
 #     --c_dropout 0\
-#     --t_dropout 0.5\
-#     --head_dropout 0.9\
+#     --t_dropout 0\
+#     --head_dropout 0.5\
 #     --embed_dropout 0\
 #     --patience 3\
 #     --des 'Exp' \
@@ -53,12 +53,12 @@ random_seed=2025
 #     --seq_len 96 \
 #     --pred_len 192 \
 #     --enc_in 8 \
-#     --d_model 256\
+#     --d_model 32\
 #     --c_ff 8\
-#     --t_ff 128\
+#     --t_ff 16\
 #     --c_dropout 0\
 #     --t_dropout 0\
-#     --head_dropout 0.9\
+#     --head_dropout 0.4\
 #     --embed_dropout 0\
 #     --patience 3\
 #     --des 'Exp' \
@@ -79,17 +79,17 @@ python -u run_longExp.py \
     --seq_len 96 \
     --pred_len 336 \
     --enc_in 8 \
-    --d_model 256\
-    --c_ff 8\
-    --t_ff 128\
+    --d_model 32\
+    --c_ff 16\
+    --t_ff 8\
     --c_dropout 0\
     --t_dropout 0\
-    --head_dropout 0.9\
+    --head_dropout 0.5\
     --embed_dropout 0\
     --patience 3\
     --des 'Exp' \
     --train_epochs 10 \
-    --batch_size 128 \
+    --batch_size 32 \
     --itr 1 \
     --learning_rate 0.0001 >MLPAer/MS/MLPAer_crop_96_336.log
 
@@ -105,13 +105,13 @@ python -u run_longExp.py \
 #     --seq_len 96 \
 #     --pred_len 720 \
 #     --enc_in 8 \
-#     --d_model 256\
+#     --d_model 32\
 #     --c_ff 8\
-#     --t_ff 128\
+#     --t_ff 8\
 #     --c_dropout 0\
 #     --t_dropout 0\
 #     --head_dropout 0.6\
-#     --embed_dropout 0.1\
+#     --embed_dropout 0\
 #     --patience 3\
 #     --des 'Exp' \
 #     --train_epochs 30 \
