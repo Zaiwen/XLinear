@@ -38,3 +38,9 @@ bash ./script/multi_forcasting/etth1.sh
 ### Main Results
 ---
 We conducted a systematic evaluation of XLinear on 7 benchmark datasets and 5 environmental datasets. The results demonstrate that the model can accurately capture temporal dimension features and variable dimension features in time series while maintaining high operational efficiency, and accomplish the forecasting task through a mechanism of synergistic integration of these two types of features.
+
+Forcasting with Exogenous
+<div align='center'>
+  <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/07acf76a-bcfd-4d4e-b151-1b28b1c37610" />
+</div>
+
