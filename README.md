@@ -42,5 +42,20 @@ We conducted a systematic evaluation of XLinear on 7 benchmark datasets and 5 en
 Forcasting with Exogenous
 <div align='center'>
   <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/07acf76a-bcfd-4d4e-b151-1b28b1c37610" />
+  <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/249ca39d-fe11-46b7-b218-19215278e9d4" />
 </div>
 
+Multivariate Forcasting
+<div align='center'>
+  <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/555ca607-f85e-4cdb-9b55-ec5bb7823ad3" />
+</div>
+
+### Model Analysis
+---
+We investigated the impact of changes in the lookback window on model performance and operational efficiency.
+<div align='center'>
+  <img width="310" height="220" alt="image" src="https://github.com/user-attachments/assets/a46b7297-7316-4d15-8f59-b7da23491ff4" />
+</div>
+<div align='center'>
+  <img width="500" height="320" alt="image" src="https://github.com/user-attachments/assets/7ee22030-b954-4288-86f8-352b7fa45e36" />
+</div>
