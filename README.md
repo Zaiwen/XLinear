@@ -1,4 +1,4 @@
-# XLinear
+# XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs
 
 ### Introduction
 ---
@@ -14,3 +14,27 @@ XLinear comprises merely two sets of gating modules with identical structures, w
   <img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/1b9b74a3-55bf-49d5-ac02-94365b3778cf" />
 </div>
 
+### Usage
+---
+1.Datasets can be obtained via the following links: 
+[ETT](https://github.com/zhouhaoyi/ETDataset)
+[Weather](https://www.bgc-jena.mpg.de/wetter/)
+[Electricity](https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014)
+[Traffic](https://pems.dot.ca.gov/)
+[Crop](https://www.kaggle.com/datasets/ajithdari/crop-yield-prediction)
+[DO_409202](http://data.water.vic.gov.au/WMIS/)
+[DO_425012](realtimedata.waternsw.com.au/water.stm)
+
+2.Install Pytorch and other necessary dependencies.
+```bash
+pip install -r requirements.txt
+```
+
+3.All dataset scripts are centralized in the `script` folder. Execute the following startup commands in the main directory. Examples are as follows:
+```bash
+bash ./script/multi_forcasting/etth1.sh
+```
+
+### Main Results
+---
+We conducted a systematic evaluation of XLinear on 7 benchmark datasets and 5 environmental datasets. The results demonstrate that the model can accurately capture temporal dimension features and variable dimension features in time series while maintaining high operational efficiency, and accomplish the forecasting task through a mechanism of synergistic integration of these two types of features.
