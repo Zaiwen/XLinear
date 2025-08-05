@@ -1,7 +1,6 @@
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
-from models import MLPAer, MLPAer_univariate,\
-MLPAer_only_temp, MLPAer_only_channel
+from models import XLinear,XLinear_ES, XLinear_GT
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
 from utils.metrics import metric
 
@@ -26,10 +25,9 @@ class Exp_Main(Exp_Basic):
 
     def _build_model(self):
         model_dict = {
-            'MLPAer': MLPAer,
-            'MLPAer_univariate':MLPAer_univariate,
-            'MLPAer_only_temp':MLPAer_only_temp,
-            'MLPAer_only_channel':MLPAer_only_channel
+            'XLinear':XLinear,
+            'XLinear-ES':XLinear_ES,
+            'XLinear-GT':XLinear_GT
         }
         model = model_dict[self.args.model].Model(self.args).float()
 
@@ -66,7 +64,7 @@ class Exp_Main(Exp_Basic):
                 # encoder - decoder
                 if self.args.use_amp:
                     with torch.cuda.amp.autocast():
-                        if 'MLP' in self.args.model or 'TST' in self.args.model:
+                        if 'XLinear' in self.args.model or 'TST' in self.args.model:
                             outputs = self.model(batch_x)
                         else:
                             if self.args.output_attention:
@@ -74,7 +72,7 @@ class Exp_Main(Exp_Basic):
                             else:
                                 outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
                 else:
-                    if 'MLP' in self.args.model or 'TST' in self.args.model:
+                    if 'XLinear' in self.args.model or 'TST' in self.args.model:
                         outputs = self.model(batch_x)
                     else:
                         if self.args.output_attention:
@@ -143,7 +141,7 @@ class Exp_Main(Exp_Basic):
                 # encoder - decoder
                 if self.args.use_amp:
                     with torch.cuda.amp.autocast():
-                        if 'MLP' in self.args.model or 'TST' in self.args.model:
+                        if 'XLinear' in self.args.model or 'TST' in self.args.model:
                             outputs = self.model(batch_x)
                         else:
                             if self.args.output_attention:
@@ -157,7 +155,7 @@ class Exp_Main(Exp_Basic):
                         loss = criterion(outputs, batch_y)
                         train_loss.append(loss.item())
                 else:
-                    if 'MLP' in self.args.model or 'TST' in self.args.model:
+                    if 'XLinear' in self.args.model or 'TST' in self.args.model:
                             outputs = self.model(batch_x)
                     else:
                         if self.args.output_attention:
@@ -243,7 +241,7 @@ class Exp_Main(Exp_Basic):
                 # encoder - decoder
                 if self.args.use_amp:
                     with torch.cuda.amp.autocast():
-                        if 'MLP' in self.args.model or 'TST' in self.args.model:
+                        if 'XLinear' in self.args.model or 'TST' in self.args.model:
                             outputs = self.model(batch_x)
                         else:
                             if self.args.output_attention:
@@ -251,7 +249,7 @@ class Exp_Main(Exp_Basic):
                             else:
                                 outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
                 else:
-                    if 'MLP' in self.args.model or 'TST' in self.args.model:
+                    if 'XLinear' in self.args.model or 'TST' in self.args.model:
                             outputs = self.model(batch_x)
                     else:
                         if self.args.output_attention:
@@ -335,7 +333,7 @@ class Exp_Main(Exp_Basic):
                 # encoder - decoder
                 if self.args.use_amp:
                     with torch.cuda.amp.autocast():
-                        if 'MLP' in self.args.model or 'TST' in self.args.model:
+                        if 'XLinear' in self.args.model or 'TST' in self.args.model:
                             outputs = self.model(batch_x)
                         else:
                             if self.args.output_attention:
@@ -343,7 +341,7 @@ class Exp_Main(Exp_Basic):
                             else:
                                 outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
                 else:
-                    if 'MLP' in self.args.model or 'TST' in self.args.model:
+                    if 'XLinear' in self.args.model or 'TST' in self.args.model:
                         outputs = self.model(batch_x)
                     else:
                         if self.args.output_attention:

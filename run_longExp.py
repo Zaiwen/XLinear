@@ -85,7 +85,7 @@ if __name__ == '__main__':
     parser.add_argument('--pct_start', type=float, default=0.3, help='pct_start')
     parser.add_argument('--use_amp', action='store_true', help='use automatic mixed precision training', default=False)
 
-    # MLPAer
+    # XLinear
     parser.add_argument('--c_ff', default=1, type=int)
     parser.add_argument('--t_ff', default=1, type=int)
     parser.add_argument('--c_dropout', default=0., type=float)

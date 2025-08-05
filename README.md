@@ -4,14 +4,14 @@
 ---
 This paper aims to bridge the gap between efficiency and accuracy in time series forecasting, particularly in scenarios involving exogenous inputs. A feature-filtering gating module composed of MLP and sigmoid is constructed for this purpose. Furthermore, we leverage global tokens extracted from endogenous sequences to filter valid information from exogenous input sequences. The proposed method achieves state-of-the-art performance on 7 benchmark datasets and 5 real-world datasets with external inputs; meanwhile, compared with mainstream Transformer-based models, it exhibits a 30% improvement in running speed.
 <div align="center">
-  <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/2463bce3-9667-4755-a868-5e2bcb59ac31" />
+  <img width="500" height="400" alt="image" src="./photo/eff_ecl.png" />
 </div>
 
 ### Overall Arctictrue
 ---
 XLinear comprises merely two sets of gating modules with identical structures, which are employed to capture temporal dimension features of endogenous variables and effective information in exogenous variables respectively. To prevent information interference between different dimensions, we draw on the approach in TimeXer for learning global representations for endogenous variables to bridge the information of these two dimensions.
 <div align='center'>
-  <img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/1b9b74a3-55bf-49d5-ac02-94365b3778cf" />
+  <img width="800" height="500" alt="image" src="./photo/workflow.png" />
 </div>
 
 ### Usage
@@ -41,21 +41,21 @@ We conducted a systematic evaluation of XLinear on 7 benchmark datasets and 5 en
 
 Forcasting with Exogenous
 <div align='center'>
-  <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/07acf76a-bcfd-4d4e-b151-1b28b1c37610" />
-  <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/249ca39d-fe11-46b7-b218-19215278e9d4" />
+  <img width="800" height="600" alt="image" src="./photo/table2.png" />
+  <img width="800" height="450" alt="image" src="./photo/table3.png" />
 </div>
 
 Multivariate Forcasting
 <div align='center'>
-  <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/555ca607-f85e-4cdb-9b55-ec5bb7823ad3" />
+  <img width="800" height="600" alt="image" src="./photo/table4.png" />
 </div>
 
 ### Model Analysis
 ---
 We investigated the impact of changes in the lookback window on model performance and operational efficiency.
 <div align='center'>
-  <img width="310" height="220" alt="image" src="https://github.com/user-attachments/assets/a46b7297-7316-4d15-8f59-b7da23491ff4" />
+  <img width="310" height="220" alt="image" src="./photo/vary_input.png" />
 </div>
 <div align='center'>
-  <img width="500" height="320" alt="image" src="https://github.com/user-attachments/assets/7ee22030-b954-4288-86f8-352b7fa45e36" />
+  <img width="500" height="320" alt="image" src="./photo/input_eff.png" />
 </div>
