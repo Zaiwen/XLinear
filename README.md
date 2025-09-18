@@ -52,10 +52,11 @@ Multivariate Forcasting
 
 ### Model Analysis
 ---
-We investigated the impact of changes in the lookback window on model performance and operational efficiency.
+First, we compared the ability of XLinear to capture temporal patterns in long sequences as the lookback window lengthens.
 <div align='center'>
   <img width="310" height="220" alt="image" src="./photo/vary_input.png" />
 </div>
+Furthermore, we investigated the changes in performance and efficiency of XLinear and other advanced temporal sequence models as the input window gradually lengthens.
 <div align='center'>
   <img width="500" height="320" alt="image" src="./photo/input_eff.png" />
 </div>
