@@ -105,6 +105,6 @@ python -u run_longExp.py \
     --patience 10\
     --des 'Exp' \
     --train_epochs 30 \
-    --batch_size 4 \
+    --batch_size 32 \
     --itr 1 \
     --learning_rate 0.001
