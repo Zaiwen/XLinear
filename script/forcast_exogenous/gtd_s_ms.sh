@@ -85,7 +85,7 @@ python -u run_longExp.py \
 
 python -u run_longExp.py \
     --random_seed $random_seed \
-    --is_training 0 \
+    --is_training 1 \
     --root_path $root_path_name \
     --data_path $data_path_name \
     --model_id gtd_s_96_720 \
