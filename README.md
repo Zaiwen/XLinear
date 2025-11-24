@@ -4,17 +4,55 @@ This is the official implementation of **XLinear: A Lightweight and Accurate MLP
 
 ### Introduction
 ---
-This paper aims to bridge the gap between efficiency and accuracy in time series forecasting, particularly in scenarios involving exogenous inputs. A feature-filtering gating module composed of MLP and sigmoid is constructed for this purpose. Furthermore, we leverage global tokens extracted from endogenous sequences to filter valid information from exogenous input sequences. The proposed method achieves state-of-the-art performance on 7 benchmark datasets and 5 real-world datasets with external inputs; meanwhile, compared with mainstream Transformer-based models, it exhibits a 30% improvement in running speed.
-<div align="center">
-  <img width="500" height="400" alt="image" src="./photo/eff_ecl.png" />
-</div>
+We have designed an extremely simple and efficient time series model—XLinear—based on MLP and sigmoid to handle real-world forecasting tasks with exogenous inputs, bridging the gap between efficiency and accuracy in time series forecasting.
 
 ### Overall Arctictrue
 ---
-XLinear comprises merely two sets of gating modules with identical structures, which are employed to capture temporal dimension features of endogenous variables and effective information in exogenous variables respectively. To prevent information interference between different dimensions, we draw on the approach in TimeXer for learning global representations for endogenous variables to bridge the information of these two dimensions.
+XLinear consists solely of two sets of gating modules with identical structures, which are designed to filter out noisy features in the temporal and variable dimensions, enhance critical features, and strengthen temporal patterns within the time series, respectively. To mitigate information interference between different dimensions, we draw on the approach proposed in TimeXer for learning global representations of endogenous variables, thereby facilitating information integration across these two dimensions.
 <div align='center'>
-  <img width="800" height="500" alt="image" src="./photo/workflow.png" />
+  <img width="800" height="500" alt="image" src="./fig/fig2.png" />
 </div>
+
+### Main Results
+---
+First, we conduct forecasting tasks with exogenous variables on 7 commonly used datasets. For this scenario, we designate the last variable as the endogenous variable, with the remaining variables serving as exogenous variables.
+<div align='center'>
+  <img width="800" height="600" alt="image" src="./fig/tab2.png" />
+</div>
+
+Second, we supplement 5 additional datasets with strong exogenous factor interference for comparative experiments. To comprehensively evaluate the model's performance in hydrological forecasting scenarios, we incorporate new metrics such as NSE, KGE, and MAPE to assess its effectiveness.
+<div align='center'>
+  <img width="800" height="600" alt="image" src="./fig/tab3.png" />
+</div>
+
+Furthermore, we investigate the performance of XLinear in multivariate forecasting scenarios.
+<div align='center'>
+  <img width="800" height="600" alt="image" src="./fig/tab4.png" />
+</div>
+
+### Model Analysis
+---
+#### Efficiency
+In addition to achieving exceptional accuracy, XLinear maintains remarkably high efficiency, reaching a level comparable to that of DLinear and RLinear.
+We investigated the efficiency of XLinear in both multivariate forecasting scenarios and univariate forecasting scenarios with exogenous inputs. Although DLinear and RLinear outperform XLinear by a marginal advantage in terms of efficiency, their predictive accuracy is considerably inferior. In contrast, compared with Transformer-based models that achieve higher accuracy, XLinear exhibits an approximate 30% improvement in training speed while consuming less GPU memory.
+<div align="center">
+  <div style="display: flex; gap: 10px; justify-content: center;">
+    <img src="./fig/fig1.png" alt="Figure 1" width="320" height="220" style="object-fit: cover;"/>
+    <img src="./fig/fig4.png" alt="Figure 2" width="320" height="220" style="object-fit: cover;"/>
+  </div>
+</div>
+
+#### Long Lookback Window
+Furthermore, we investigate the capability of XLinear to learn temporal patterns from longer lookback windows. 
+<div align='center'>
+  <img width="320" height="220" alt="image" src="./fig/fig7.png" />
+</div>
+
+Concurrently, we compare it with several lightweight and high-precision time series models in terms of variations in model resource consumption and running speed as the lookback window expands.
+<div align='center'>
+  <img width="500" height="320" alt="image" src="./fig/fig8.png" />
+</div>
+
 
 ### Usage
 ---
@@ -37,28 +75,5 @@ pip install -r requirements.txt
 bash ./script/multi_forcasting/etth1.sh
 ```
 
-### Main Results
----
-We conducted a systematic evaluation of XLinear on 7 benchmark datasets and 5 environmental datasets. The results demonstrate that the model can accurately capture temporal dimension features and variable dimension features in time series while maintaining high operational efficiency, and accomplish the forecasting task through a mechanism of synergistic integration of these two types of features.
-
-Forcasting with Exogenous
-<div align='center'>
-  <img width="800" height="600" alt="image" src="./photo/table2.png" />
-  <img width="800" height="450" alt="image" src="./photo/table3.png" />
-</div>
-
-Multivariate Forcasting
-<div align='center'>
-  <img width="800" height="600" alt="image" src="./photo/table4.png" />
-</div>
-
-### Model Analysis
----
-First, we compared the ability of XLinear to capture temporal patterns in long sequences as the lookback window lengthens.
-<div align='center'>
-  <img width="310" height="220" alt="image" src="./photo/vary_input.png" />
-</div>
-Furthermore, we investigated the changes in performance and efficiency of XLinear and other advanced temporal sequence models as the input window gradually lengthens.
-<div align='center'>
-  <img width="500" height="320" alt="image" src="./photo/input_eff.png" />
-</div>
+### Concat
+If you have any questions or concerns, please contact us at {Warren.Jin@csiro.au, Yhuang@mail.hzau.edu.cn, Zaiwen.Feng@mail.hzau.edu.cn} or submit an issue.
