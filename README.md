@@ -16,6 +16,18 @@ If you find this work useful, please cite:
   journal={arXiv preprint arXiv:2601.09237},
   year={2026}
 }
+or
+@article{Chen_Jin_Huang_Feng_2026,
+title={XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs},
+volume={40},
+url={https://ojs.aaai.org/index.php/AAAI/article/view/39121},
+DOI={10.1609/aaai.v40i24.39121},
+number={24},
+journal={Proceedings of the AAAI Conference on Artificial Intelligence},
+author={Chen, Xinyang and Jin, Huidong and Huang, Yu and Feng, Zaiwen},
+year={2026},
+month={Mar.},
+pages={20325-20335} }
 ```
 
 ### Introduction
