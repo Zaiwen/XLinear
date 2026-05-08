@@ -10,13 +10,8 @@ https://doi.org/10.48550/arXiv.2601.09237)
 If you find this work useful, please cite:
 
 ```bibtex
-@article{chen2026xlinear,
-  title={XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs},
-  author={Chen, Xinyang and Jin, Huidong and Huang, Yu and Feng, Zaiwen},
-  journal={arXiv preprint arXiv:2601.09237},
-  year={2026}
-}
-or
+
+AAAI version
 @article{Chen_Jin_Huang_Feng_2026,
 title={XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs},
 volume={40},
@@ -28,6 +23,14 @@ author={Chen, Xinyang and Jin, Huidong and Huang, Yu and Feng, Zaiwen},
 year={2026},
 month={Mar.},
 pages={20325-20335} }
+
+arxiv version
+@article{chen2026xlinear,
+  title={XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs},
+  author={Chen, Xinyang and Jin, Huidong and Huang, Yu and Feng, Zaiwen},
+  journal={arXiv preprint arXiv:2601.09237},
+  year={2026}
+}
 ```
 
 ### Introduction
