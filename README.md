@@ -12,7 +12,7 @@ If you find this work useful, please cite:
 ```bibtex
 
 AAAI version
-@article{Chen_Jin_Huang_Feng_2026,
+@article{chen2026xlinear,
 title={XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs},
 volume={40},
 url={https://ojs.aaai.org/index.php/AAAI/article/view/39121},
