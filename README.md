@@ -2,10 +2,9 @@
 
 This is the official implementation of **XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs**.
 
-paper:
-
 [![arXiv](https://img.shields.io/badge/arXiv-2601.09237-b31b1b.svg)](
 https://doi.org/10.48550/arXiv.2601.09237)
+[![AAAI](https://img.shields.io/badge/AAAI-2026-blue.svg)](https://ojs.aaai.org/index.php/AAAI/article/view/39121)
 
 If you find this work useful, please cite:
 
