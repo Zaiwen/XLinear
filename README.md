@@ -106,4 +106,8 @@ bash ./script/multi_forcasting/etth1.sh
 ```
 
 ### Concat
-If you have any questions or concerns, please contact us at {xinyangc@webmail.hzau.edu.cn,Warren.Jin@csiro.au, Yhuang@mail.hzau.edu.cn, Zaiwen.Feng@mail.hzau.edu.cn} or submit an issue.
+If you have any questions or concerns, please contact us at
+{xinyangc@webmail.hzau.edu.cn,
+Warren.Jin@csiro.au, 
+Yhuang@mail.hzau.edu.cn,
+Zaiwen.Feng@mail.hzau.edu.cn} or submit an issue.
